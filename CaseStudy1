@@ -1,0 +1,424 @@
+
+import java.util.*;
+public class Main 
+{
+    	public static void main(String[] args) 
+    {
+    	    
+    	    Scanner sc=new Scanner(System.in);
+    	    Students stud=new Students();
+    	    stud.Order(1,"Ananth","Electro Fields","test_1","21-Jul-16",100);
+    	    stud.Order(2,"Bhagath","Electro Fields","test_1","21-Jul-16",78);
+    	    stud.Order(3,"Chaya","Electro Fields","test_1","21-Jul-16",68);
+    	   stud.Order(4,"Esharath","Electro Fields","test_1","21-Jul-16",87);
+    	   stud.Order(5,"Bhagath ","Electro Fields","quiz_1","22-Jul-16",20);
+    	   stud.Order(6,"Chaya","Electro Fields","lab_1","23-Jul-16",10);
+    	   stud.Order(7,"Ananth","Electro Fields","project_1","24-Jul-16",100);
+    	   stud.Order(8,"Davanth","Electro Fields","project_1","24-Jul-16",100);
+    	   stud.Order(9,"Bhagath","Electro Fields","quiz_2","25-Jul-16",50);
+    	   stud.Order(10,"Ananth","Electro Fields","quiz_1","26-Jul-16",100);
+    	   stud.Order(11,"Bhagath","Electro Fields","lab_1","27-Jul-16",10);
+    	   stud.Order(12,"Chaya","Electro Fields","project_1","28-Jul-16",100);
+    	   stud.Order(13,"Bhagath","Electro Fields","project_1","28-Jul-16",100);
+    	   stud.Order(14,"Ananth","Computing Techniques","test_1","29-Jul-16",86);
+    	   stud.Order(15,"Ananth","Electro Fields","quiz_2","29-Jul-16",100);
+    	   stud.Order(16,"Bhagath","Computing Techniques","project_1","30-Jul-16",100);
+    	   stud.Order(17,"Ananth","Electro Fields","lab_1","30-Jul-16",100);
+    	   stud.Order(18,"Chaya","Computing Techniques","quiz_1","31-Jul-16",20);
+    	   stud.Order(19,"Ananth","Electro Fields","test_2","1-Aug-16",100);
+    	   stud.Order(20,"Chaya","Electro Fields","test_2","1-Aug-16",92);
+    	    
+    	    
+    	    //student.add(new DrinkOrder(1,"Ananth","Electro Fields","test_1","21-Jul-16",100));
+    	    
+    	   
+    	    // System.out.println(""+stud.Name[5]+""+stud.sno[5]);
+
+    	    System.out.println("Enter name or subject:");
+    	    String input= sc.nextLine();
+    	    
+    	    if(input.equals("Electro Fields") || input.equals("Computing Techniques"))
+    	    {
+    	        //System.out.println("false");
+    	        int sumtest=0,sumquiz=0,sumlab=0,sumproject=0;
+    	        if(input.equals("Electro Fields"))
+    	        {
+    	        for(int i=0;i<20;i++)
+    	        {
+    	           // System.out.println(""+stud.Name[i]+""+stud.sno[i]);
+    	            if(stud.Name[i].equals("Ananth") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("test_1") || stud.ac[i].equals("test_2")))
+    	            {
+    	                 sumtest=(40/2)*stud.point[i]+sumtest;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Ananth") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("quiz_2") || stud.ac[i].equals("quiz_1")))
+    	            {
+    	                 sumquiz=(20/2)*stud.point[i]+sumquiz;
+    	            }
+    	        
+    	            if(stud.Name[i].equals("Ananth") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("lab_1") || stud.ac[i].equals("lab_2")))
+    	            {
+    
+    	                    sumlab=(10/1)*stud.point[i]+sumlab;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Ananth") && stud.subject[i].equals("Electro Fields") && stud.ac[i].equals("project_1"))
+    	            {
+    
+    	                 sumproject=(30/1)*stud.point[i]+sumproject;
+    	            }
+    	        }
+    	        System.out.println(" "+sumtest/100+" "+sumquiz/100+" "+sumlab/100+" "+sumproject/100+" "+(sumtest/100+sumquiz/100+sumlab/100+sumproject/100));
+
+    	        sumtest=0;sumquiz=0;sumlab=0;sumproject=0;
+    	        
+    	         for(int i=0;i<20;i++)
+    	        {
+    	           // System.out.println(""+stud.Name[i]+""+stud.sno[i]);
+    	            if(stud.Name[i].equals("Bhagath") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("test_1") || stud.ac[i].equals("test_2")))
+    	            {
+    	                 sumtest=(40/1)*stud.point[i]+sumtest;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Bhagath") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("quiz_2") || stud.ac[i].equals("quiz_1")))
+    	            {
+    	                 sumquiz=(20/3)*stud.point[i]+sumquiz;
+    	                 //System.out.println(sumquiz);
+    	                 
+    	            }
+    	       
+    	            if(stud.Name[i].equals("Bhagath") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("lab_1") || stud.ac[i].equals("lab_2")))
+    	            {
+    
+    	                    sumlab=(10/2)*stud.point[i]+sumlab;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Bhagath") && stud.subject[i].equals("Electro Fields") && stud.ac[i].equals("project_1"))
+    	            {
+    
+    	                 sumproject=(30/2)*stud.point[i]+sumproject;
+    	            }
+    	        }
+    	        System.out.println(" "+sumtest/100+" "+sumquiz/100+" "+sumlab/100+" "+sumproject/100+" "+(sumtest/100+sumquiz/100+sumlab/100+sumproject/100));
+
+                sumtest=0;sumquiz=0;sumlab=0;sumproject=0;
+    	        
+    	        for(int i=0;i<20;i++)
+    	        {
+    	           // System.out.println(""+stud.Name[i]+""+stud.sno[i]);
+    	            if(stud.Name[i].equals("Chaya") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("test_1") || stud.ac[i].equals("test_2")))
+    	            {
+    	                 sumtest=(40/2)*stud.point[i]+sumtest;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Chaya") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("quiz_2") || stud.ac[i].equals("quiz_1")))
+    	            {
+    	                 sumquiz=(20/1)*stud.point[i]+sumquiz;
+    	            }
+    	       
+    	            if(stud.Name[i].equals("Chaya") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("lab_1") || stud.ac[i].equals("lab_2")))
+    	            {
+    
+    	                    sumlab=(10/1)*stud.point[i]+sumlab;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Chaya") && stud.subject[i].equals("Electro Fields") && stud.ac[i].equals("project_1"))
+    	            {
+    
+    	                 sumproject=(30/1)*stud.point[i]+sumproject;
+    	            }
+    	        }
+    	      System.out.println(" "+sumtest/100+" "+sumquiz/100+" "+sumlab/100+" "+sumproject/100+" "+(sumtest/100+sumquiz/100+sumlab/100+sumproject/100));
+
+    	        sumtest=0;sumquiz=0;sumlab=0;sumproject=0;
+    	        for(int i=0;i<20;i++)
+    	        {
+    	           // System.out.println(""+stud.Name[i]+""+stud.sno[i]);
+    	            if(stud.Name[i].equals("Esharath") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("test_1") || stud.ac[i].equals("test_2")))
+    	            {
+    	                 sumtest=(40/1)*stud.point[i]+sumtest;
+    	            }
+    	       
+    	          if(stud.Name[i].equals("Esharath") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("quiz_2") || stud.ac[i].equals("quiz_1")))
+    	            {
+    	                 sumquiz=sumquiz;
+    	            }
+    	        
+    	            if(stud.Name[i].equals("Esharath") && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("lab_1") || stud.ac[i].equals("lab_2")))
+    	            {
+    
+    	                    sumlab=sumlab;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Esharath") && stud.subject[i].equals("Electro Fields") && stud.ac[i].equals("project_1"))
+    	            {
+    
+    	                 sumproject=sumproject;
+    	            }
+    	        }
+     	        System.out.println(" "+sumtest/100+" "+sumquiz/100+" "+sumlab/100+" "+sumproject/100+" "+(sumtest/100+sumquiz/100+sumlab/100+sumproject/100));
+    	        }
+    	        
+    	        else{
+
+                for(int i=0;i<20;i++)
+    	        {
+    	           // System.out.println(""+stud.Name[i]+""+stud.sno[i]);
+    	            if(stud.Name[i].equals("Ananth") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("test_1") || stud.ac[i].equals("test_2")))
+    	            {
+    	                 sumtest=(40/2)*stud.point[i]+sumtest;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Ananth") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("quiz_2") || stud.ac[i].equals("quiz_1")))
+    	            {
+    	                 sumquiz=(20/2)*stud.point[i]+sumquiz;
+    	            }
+    	        
+    	            if(stud.Name[i].equals("Ananth") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("lab_1") || stud.ac[i].equals("lab_2")))
+    	            {
+    
+    	                    sumlab=(10/1)*stud.point[i]+sumlab;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Ananth") && stud.subject[i].equals("Computing Techniques") && stud.ac[i].equals("project_1"))
+    	            {
+    
+    	                 sumproject=(30/1)*stud.point[i]+sumproject;
+    	            }
+    	        }
+    	        System.out.println(" "+sumtest/100+" "+sumquiz/100+" "+sumlab/100+" "+sumproject/100+" "+(sumtest/100+sumquiz/100+sumlab/100+sumproject/100));
+
+    	        sumtest=0;sumquiz=0;sumlab=0;sumproject=0;
+    	        
+    	         for(int i=0;i<20;i++)
+    	        {
+    	           // System.out.println(""+stud.Name[i]+""+stud.sno[i]);
+    	            if(stud.Name[i].equals("Bhagath") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("test_1") || stud.ac[i].equals("test_2")))
+    	            {
+    	                 sumtest=(40/2)*stud.point[i]+sumtest;
+    	            }
+    	       
+    	             if(stud.Name[i].equals("Bhagath") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("quiz_2") || stud.ac[i].equals("quiz_1")))
+    	            {
+    	                 sumquiz=(20/2)*stud.point[i]+sumquiz;
+    	            }
+    	        
+    	            if(stud.Name[i].equals("Bhagath") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("lab_1") || stud.ac[i].equals("lab_2")))
+    	            {
+    
+    	                    sumlab=(10/1)*stud.point[i]+sumlab;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Bhagath") && stud.subject[i].equals("Computing Techniques") && stud.ac[i].equals("project_1"))
+    	            {
+    
+    	                 sumproject=(30/1)*stud.point[i]+sumproject;
+    	            }
+    	        }
+    	        System.out.println(" "+sumtest/100+" "+sumquiz/100+" "+sumlab/100+" "+sumproject/100+" "+(sumtest/100+sumquiz/100+sumlab/100+sumproject/100));
+
+                sumtest=0;sumquiz=0;sumlab=0;sumproject=0;
+    	        
+    	        for(int i=0;i<20;i++)
+    	        {
+    	           // System.out.println(""+stud.Name[i]+""+stud.sno[i]);
+    	            if(stud.Name[i].equals("Chaya") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("test_1") || stud.ac[i].equals("test_2")))
+    	            {
+    	                 sumtest=(40/2)*stud.point[i]+sumtest;
+    	            }
+    	       
+    	             if(stud.Name[i].equals("Chaya") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("quiz_2") || stud.ac[i].equals("quiz_1")))
+    	            {
+    	                 sumquiz=(20/2)*stud.point[i]+sumquiz;
+    	            }
+    	        
+    	            if(stud.Name[i].equals("Chaya") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("lab_1") || stud.ac[i].equals("lab_2")))
+    	            {
+    
+    	                    sumlab=(10/1)*stud.point[i]+sumlab;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Chaya") && stud.subject[i].equals("Computing Techniques") && stud.ac[i].equals("project_1"))
+    	            {
+    
+    	                 sumproject=(30/1)*stud.point[i]+sumproject;
+    	            }
+    	        }
+    	      System.out.println(" "+sumtest/100+" "+sumquiz/100+" "+sumlab/100+" "+sumproject/100+" "+(sumtest/100+sumquiz/100+sumlab/100+sumproject/100));
+
+    	        sumtest=0;sumquiz=0;sumlab=0;sumproject=0;
+    	        for(int i=0;i<20;i++)
+    	        {
+    	           // System.out.println(""+stud.Name[i]+""+stud.sno[i]);
+    	            if(stud.Name[i].equals("Esharath") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("test_1") || stud.ac[i].equals("test_2")))
+    	            {
+    	                 sumtest=(40/2)*stud.point[i]+sumtest;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Esharath") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("quiz_2") || stud.ac[i].equals("quiz_1")))
+    	            {
+    	                 sumquiz=sumquiz;
+    	            }
+    	       
+    	            if(stud.Name[i].equals("Esharath") && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("lab_1") || stud.ac[i].equals("lab_2")))
+    	            {
+    
+    	                 sumlab=sumlab;
+    	            }
+    	        
+    	             if(stud.Name[i].equals("Esharath") && stud.subject[i].equals("Computing Techniques") && stud.ac[i].equals("project_1"))
+    	            {
+    
+    	                 sumproject=sumproject;
+    	            }
+    	        }
+     	        System.out.println(" "+sumtest/100+" "+sumquiz/100+" "+sumlab/100+" "+sumproject/100+" "+(sumtest/100+sumquiz/100+sumlab/100+sumproject/100));
+
+    	        } 
+    	        
+    	    }
+    	    else
+    	    {
+    	        int sumtest=0,sumquiz=0,sumlab=0,sumproject=0;
+    	        int sumtest1=0,sumquiz1=0,sumlab1=0,sumproject1=0;
+    	        
+    	        
+    	        for(int i=0;i<20;i++)
+    	        {
+    	           // System.out.println(""+stud.Name[i]+""+stud.sno[i]);
+			       int count=0;
+
+    	            if(input.equals(stud.Name[i]) && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("test_1") || stud.ac[i].equals("test_2")))
+    	            {
+    	                
+    	                for(int j=0;j<20;j++)
+    	                    {
+    	                   if(input.equals(stud.Name[j]) && stud.subject[j].equals("Electro Fields") && (stud.ac[j].equals("test_1") || stud.ac[j].equals("test_2")))
+    	                    {
+    	                        count++;
+    	                        //System.out.println(count);
+    	                    }
+    	               }
+    	               System.out.println(count);
+    	                 sumtest=(40/count)*stud.point[i]+sumtest;
+    	            }
+    	            count=0;
+    	             if(input.equals(stud.Name[i]) && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("quiz_2") || stud.ac[i].equals("quiz_1")))
+    	            {
+    	                 for(int j=0;j<20;j++)
+    	               {
+    	                    if(input.equals(stud.Name[j]) && stud.subject[j].equals("Electro Fields") && (stud.ac[j].equals("quiz_2") || stud.ac[j].equals("quiz_1")))
+    	                     {
+    	                        count++;
+    	                    }
+    	               }
+    	                 sumquiz=(20/count)*stud.point[i]+sumquiz;
+    	            }
+    	            count=0;
+    	            if(input.equals(stud.Name[i]) && stud.subject[i].equals("Electro Fields") && (stud.ac[i].equals("lab_1") || stud.ac[i].equals("lab_2")))
+    	            {
+    	                  for(int j=0;j<20;j++)
+    	               {
+    	            if(input.equals(stud.Name[j]) && stud.subject[j].equals("Electro Fields") && (stud.ac[j].equals("lab_1") || stud.ac[j].equals("lab_2")))
+    	                     {
+    	                        count++;
+    	                    }
+    	               }
+    
+    	                    sumlab=(10/1)*stud.point[i]+sumlab;
+    	            }
+    	       
+    	             if(input.equals(stud.Name[i]) && stud.subject[i].equals("Electro Fields") && stud.ac[i].equals("project_1"))
+    	            {
+                       for(int j=0;j<20;j++)
+    	               {
+    	             if(input.equals(stud.Name[j]) && stud.subject[j].equals("Electro Fields") && stud.ac[j].equals("project_1"))
+            	                     {
+    	                        count++;
+    	                    }
+    	               }
+    	                 sumproject=(30/1)*stud.point[i]+sumproject;
+    	            }
+    	            
+    	           // System.out.println(""+stud.Name[i]+""+stud.sno[i]);
+    	            if(input.equals(stud.Name[i]) && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("test_1") || stud.ac[i].equals("test_2")))
+    	            {
+    	                 for(int j=0;j<20;j++)
+    	               {
+    	            if(input.equals(stud.Name[j]) && stud.subject[j].equals("Computing Techniques") && (stud.ac[j].equals("test_1") || stud.ac[j].equals("test_2")))
+            	                     {
+    	                        count++;
+    	                    }
+    	               }
+    	                 sumtest1=(40/1)*stud.point[i]+sumtest1;
+    	            }
+    	       
+    	             if(input.equals(stud.Name[i]) && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("quiz_2") || stud.ac[i].equals("quiz_1")))
+    	            {
+    	                  for(int j=0;j<20;j++)
+    	               {
+    	             if(input.equals(stud.Name[j]) && stud.subject[j].equals("Computing Techniques") && (stud.ac[j].equals("quiz_2") || stud.ac[j].equals("quiz_1")))
+            	                     {
+    	                        count++;
+    	                    }
+    	               }
+    	                 sumquiz1=(20/2)*stud.point[i]+sumquiz1;
+    	            }
+    	        
+    	            if(input.equals(stud.Name[i]) && stud.subject[i].equals("Computing Techniques") && (stud.ac[i].equals("lab_1") || stud.ac[i].equals("lab_2")))
+    	            {
+    
+                        for(int j=0;j<20;j++)
+    	               {
+    	            if(input.equals(stud.Name[j]) && stud.subject[j].equals("Computing Techniques") && (stud.ac[j].equals("lab_1") || stud.ac[j].equals("lab_2")))
+            	                     {
+    	                        count++;
+    	                    }
+    	               }
+    	                    sumlab1=(10/1)*stud.point[i]+sumlab1;
+    	            }
+    	             if(input.equals(stud.Name[i]) && stud.subject[i].equals("Computing Techniques") && stud.ac[i].equals("project_1"))
+    	            {
+    	                  for(int j=0;j<20;j++)
+    	               {
+    	             if(input.equals(stud.Name[j]) && stud.subject[j].equals("Computing Techniques") && stud.ac[j].equals("project_1"))
+            	                     {
+    	                        count++;
+    	                    }
+    	               }
+    
+    	                 sumproject1=(30/1)*stud.point[i]+sumproject1;
+    	            }
+    	            
+    	        }
+    	        System.out.println(" "+sumtest/100+" "+sumquiz/100+" "+sumlab/100+" "+sumproject/100+" "+(sumtest/100+sumquiz/100+sumlab/100+sumproject/100));
+    	        System.out.println(" "+sumtest1/100+" "+sumquiz1/100+" "+sumlab1/100+" "+sumproject1/100+" "+(sumtest1/100+sumquiz1/100+sumlab1/100+sumproject1/100));
+    	    }
+	}
+}
+class Students {
+    public int[] sno=new int[20];
+    public String[] Name=new String[20];
+    public String[] subject=new String[20];
+    public String[] ac=new String[20];
+    public String[] dsb=new String[20];
+    public int[] point=new int[20];
+    int i=0;
+    
+        public void Order(int sno,String Name,String subject,String ac,String dsb,int point)
+        {
+            
+            this.sno[i]=sno;
+            this.Name[i]=Name;
+            this.subject[i]=subject;
+            this.ac[i]=ac;
+            this.dsb[i]=dsb;
+            this.point[i]=point;
+            i++;
+            //System.out.println(""+this.sno[0]);
+        }
+        //System.out.println(""+this.sno[0]);
+    }
+    
+
+
